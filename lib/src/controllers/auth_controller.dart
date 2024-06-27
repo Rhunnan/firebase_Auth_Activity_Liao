@@ -1,3 +1,7 @@
+import 'dart:async';
+
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:state_change_demo/src/enum/enum.dart';
@@ -15,6 +19,21 @@ class AuthController with ChangeNotifier {
 
   AuthState state = AuthState.unauthenticated;
   SimulatedAPI api = SimulatedAPI();
+  late StreamSubscription<User?> currentAuthedUser;
+
+  listen() {
+    currentAuthedUser =
+        FirebaseAuth.instance.userChanges().listen(handleUserChanges);
+  }
+
+  void handleUserChanges(User? user) {
+    if (user == null) {
+      state = AuthState.unauthenticated;
+    } else {
+      state = AuthState.authenticated;
+    }
+    notifyListeners();
+  }
 
   login(String userName, String password) async {
     bool isLoggedIn = await api.login(userName, password);
