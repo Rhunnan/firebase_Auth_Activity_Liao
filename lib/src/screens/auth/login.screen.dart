@@ -78,15 +78,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     onEditingComplete: () {
                       passwordFn.requestFocus();
                     },
-                    validator: MultiValidator([
-                      RequiredValidator(
-                          errorText: 'Please fill out the username'),
-                      MaxLengthValidator(32,
-                          errorText: "Username cannot exceed 32 characters"),
-                      PatternValidator(r'^[a-zA-Z0-9 ]+$',
-                          errorText:
-                              'Username cannot contain special characters'),
-                    ]).call,
+                    // validator: MultiValidator([
+                    //   RequiredValidator(
+                    //       errorText: 'Please fill out the username'),
+                    //   MaxLengthValidator(32,
+                    //       errorText: "Username cannot exceed 32 characters"),
+                    //   PatternValidator(r'^[a-zA-Z0-9 ]+$',
+                    //       errorText:
+                    //           'Username cannot contain special characters'),
+                    // ]).call,
                   ),
                 ),
                 const SizedBox(

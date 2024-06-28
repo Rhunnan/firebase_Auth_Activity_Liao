@@ -57,7 +57,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDRCq_7YarHvLW02yp_7lYUshAL-BOrqsI',
-    appId: '1:481169571508:android:ff2374940fc543d465a1e1',
+    appId: '1:481169571508:android:374a9c6d47eff64f65a1e1',
     messagingSenderId: '481169571508',
     projectId: 'rhunnan-firebaseauth',
     storageBucket: 'rhunnan-firebaseauth.appspot.com',
@@ -71,4 +71,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'rhunnan-firebaseauth.appspot.com',
     iosBundleId: 'com.example.stateChangeDemo',
   );
+
 }
