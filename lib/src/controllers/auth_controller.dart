@@ -35,6 +35,11 @@ class AuthController with ChangeNotifier {
     notifyListeners();
   }
 
+  register(String email, String password) async {
+    UserCredential? userCredential = await FirebaseAuth.instance
+        .createUserWithEmailAndPassword(email: email, password: password);
+  }
+
   login(String userName, String password) async {
     UserCredential userCredential = await FirebaseAuth.instance
         .signInWithEmailAndPassword(email: userName, password: password);
